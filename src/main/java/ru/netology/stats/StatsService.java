@@ -17,18 +17,13 @@ public class StatsService {
         }
 
         public int monthMaxSales(int[] sales) {
-                int max = sales[0];
-                int maxIndex = 0;
-                for (int i = 0; i < sales.length; i++) {
+                int max = sales[sales.length-1];
+                int maxIndex = sales.length-1;
+                for (int i = maxIndex; i >=0; i--) {
                         if (sales[i] > max) {
                                 max = sales[i];
                                 maxIndex = i;
-                                for(int j = maxIndex; j < sales.length;j ++){
-                                        if(max == sales[j]) {
-                                                max = sales[j];
-                                                maxIndex = j;
-                                        }
-                                }
+
 
                         }
 
